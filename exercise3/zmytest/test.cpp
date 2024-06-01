@@ -946,11 +946,35 @@ bool TestIteratori() {
 
 //********************************************************************************
 //BST
+bool BSTcasiLimite() {
+    lasd::BST<int> bst;
 
-bool TestBST() {
-  bool testBST = true;
+    bst.Insert(10);
+    bst.Insert(5);
+    bst.Insert(15);
+    bst.Insert(3);  
+    bst.Insert(7);
+    bst.Insert(13);
+    bst.Insert(17); 
 
-  return testBST;
+    
+    bool predecessorMinTest = false;
+    try {
+      bst.Predecessor(3); //il predecessore di 3 non esiste
+    } catch (std::length_error&) {
+      predecessorMinTest = true; // dovrebbe lanciare eccezione per essere corretta la funzione
+    }
+
+    bool successorMaxTest = false;
+    try {
+        bst.Successor(17);  //il successore di 17 non c'è
+    } catch (std::length_error&) {
+        successorMaxTest = true; // dovrebbe lanciare eccezione per essere corretta la funzione
+    }
+
+    bool middleElementTest = (bst.Predecessor(10) == 7) && (bst.Successor(10) == 13);
+
+    return predecessorMinTest && successorMaxTest && middleElementTest;
 }
 //*******************************************************************************
 /* ************************************************************************** */
@@ -1040,7 +1064,7 @@ cout << endl <<"******** Begin of Iterator test *******\n" << endl;
 cout<<" Test su iteratori:"<<((TestIteratori()) ? "\nTest su iteratori Corretto" : "\nErrore Test Iteratori")<<endl;
 
 cout << endl <<"******** Begin of BST test *******\n" << endl;
-cout<<" Test su BST:"<<((TestBST()) ? "\nTest su BST Corretto" : "\nErrore in Test BST")<<endl;
+cout<<" Test su BST casi limte:"<<((BSTcasiLimite()) ? "Corretto" : "Errore")<<endl;
 
 }
 
