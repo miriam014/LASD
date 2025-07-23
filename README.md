@@ -18,7 +18,9 @@ Al suo interno si trovano:
 ## ▶️ Istruzioni per la compilazione
 Per compilare il progetto, posizionati nella cartella esercizi ed esegui:
 make
+
 Per avviare il programma:
 ./main
+
 Per ripulire i file oggetto e l’eseguibile:
 make clean
