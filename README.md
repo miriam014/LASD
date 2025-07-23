@@ -11,9 +11,9 @@ Al suo interno si trovano:
 - il Makefile per la compilazione dell’intero progetto tramite un unico comando (make);
 
 ## 🛠️ Tecnologie utilizzate
-C++
-Make
-Class diagram fornito dal docente (con interfacce, contenitori, iteratori, ecc.)
+- C++
+- Make
+- Class diagram fornito dal docente (con interfacce, contenitori, iteratori, ecc.)
 
 ## ▶️ Istruzioni per la compilazione
 Per compilare il progetto, posizionati nella cartella esercizi ed esegui:
